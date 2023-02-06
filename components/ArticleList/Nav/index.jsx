@@ -2,8 +2,7 @@ import Link from 'next/link'
 import styles from './index.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 export default function Nav() {
-    const Nav_show = useSelector((state: any) => state.Nav_show)
-    console.log(Nav_show, 11111)
+    const Nav_show = useSelector(state => state.Nav_show)
     const navData = [
         {
             path: '/',
@@ -20,7 +19,7 @@ export default function Nav() {
         },
     ]
     return (
-        <nav className={Nav_show ? styles.nav_main : styles.visiable}>
+        <nav className={Nav_show ? styles.nav_main : styles.visible}>
             <div className={styles.nav_list}>
                 {
                     navData.map((i, _) => (

@@ -9,6 +9,9 @@
     overflow: hidden;
 }
 
+.hidden {
+    display: none;
+}
 
 
 .banner {
@@ -41,9 +44,7 @@
     color: #120f0f;
 }
 
-.hidden {
-    display: none;
-}
+
 
 .label {
     position: absolute;

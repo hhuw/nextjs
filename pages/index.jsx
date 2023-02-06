@@ -1,6 +1,6 @@
 import styles from './index.module.css'
 import Layout from '../components/Layout'
-import Home from '../components/Home';
+import ArticleList from '../components/ArticleList';
 import { Row, Col } from 'antd'
 import Sider from '../components/Sider'
 import AuthorList from '../components/AuthorList'
@@ -8,14 +8,14 @@ import Ad from '../components/Ad';
 import { useSelector } from 'react-redux'
 
 export default function App() {
-    const Ad_show = useSelector((state: any) => state.Ad_show)
-    const Nav_show = useSelector((state: any) => state.Nav_show)
+    const Ad_show = useSelector(state => state.Ad_show)
+    const Nav_show = useSelector(state => state.Nav_show)
 
     return (
         <Layout>
             <Row className={styles.container}>
                 <Col className={styles.article_main} xs={24} sm={24} md={24} lg={17} xl={17}>
-                    <Home />
+                    <ArticleList />
                 </Col>
                 <Col className={styles.sider} xs={0} sm={0} md={0} lg={6} xl={6} offset={1}>
                     <Sider>

@@ -5,7 +5,7 @@ const defaultState = {
     Nav_show:true,
     Ad_display:false
 }
-const reducer = (state=defaultState,action:any)=>{
+const reducer = (state=defaultState,action)=>{
     const {type} = action
     switch(type) {
         case NAV_SHOW:{

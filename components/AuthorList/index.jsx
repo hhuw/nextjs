@@ -1,14 +1,8 @@
 import styles from './index.module.css'
 import Link from 'next/link'
 export default function AuthorList() {
-    interface Data {
-        path: string,
-        imgPath: string,
-        name: string,
-        level: number | string,
-        position: string
-    }
-    const authorData: Array<object> = [
+
+    const authorData = [
         {
             path: 'https://juejin.cn/user/2634854380340008',
             imgPath: 'https://p3-passport.byteimg.com/img/user-avatar/b9a366997037d998063135bd56302b85~100x100.awebp',
@@ -46,7 +40,7 @@ export default function AuthorList() {
                 </header>
                 <div className={styles.user_list}>
                     {
-                        authorData.map((i: any, _) => (
+                        authorData.map((i, _) => (
                             <div className={styles.user_item}>
                                 <Link href={i.path} className={styles.link}>
                                     <img src={i.imgPath} alt={`${i.name}的头像`} className={styles.avatar} loading="lazy" />
