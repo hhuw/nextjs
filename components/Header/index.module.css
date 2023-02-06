@@ -1,0 +1,138 @@
+.main_header_box {
+    height: 5rem;
+    position: relative;
+}
+
+.main_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .2s;
+    border-bottom: 1px solid #f1f1f1;
+    height: 5rem;
+    color: #909090;
+    z-index: 250;
+    transform: translateZ(0);
+    background-color: #ffffff;
+
+}
+
+.visible {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .2s;
+    border-bottom: 1px solid #f1f1f1;
+    height: 5rem;
+    color: #909090;
+    z-index: 250;
+    transform: translate3d(0, -100%, 0);
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.logo {
+    margin-right: 1rem;
+    display: inline-block;
+    height: 22px;
+    width: auto;
+    margin-left: 24px;
+}
+
+.logo_img {
+    display: block;
+    width: 107px;
+    height: 22px;
+}
+
+.main_nav {
+    height: 100%;
+    flex: 1 0 auto;
+    line-height: normal;
+}
+
+.nav_list {
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.main_nav_list {
+    display: flex;
+    order: 99;
+}
+
+.phone_hide {
+    display: flex;
+}
+
+.nav_item {
+    color: #86909c;
+    font-size: 1.167rem;
+    margin: 0 1rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.text {
+    color: #515767;
+}
+
+
+
+.nav_item:hover {
+    border-bottom: 1px solid blue;
+}
+
+.nav_item span {
+    cursor: default;
+}
+
+.phone_nav {
+    font-size: 20px;
+    position: relative;
+    text-align: right;
+}
+
+.nav_radio {
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+.nav_item:has(.nav_radio:checked) .text {
+    color: #1e80ff;
+
+}
+
+.menu_auto {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    color: #1e80ff;
+    font-size: 1.33rem;
+    justify-content: center;
+    padding: 0;
+    width: 5.66rem;
+}

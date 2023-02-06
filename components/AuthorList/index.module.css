@@ -1,0 +1,86 @@
+.main {
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 5%);
+    border-radius: 2px;
+    margin-bottom: 1.3rem;
+    font-size: 1.16rem;
+    line-height: 1.29;
+    color: #333;
+}
+
+.user_block_header {
+    padding: 1rem 1.3rem;
+    border-bottom: 1px solid hsla(0, 0%, 59.2%, .1);
+}
+
+.user_item {
+    background-color: #fff;
+}
+
+.user_item:hover {
+    background-color: #fbfbfb;
+}
+
+.link {
+    padding: 1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.avatar {
+    flex: 0 0 auto;
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    display: inline-block;
+    position: relative;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.user_info {
+    overflow: hidden;
+}
+
+.username {
+    font-size: 1.16rem;
+    font-weight: 400;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+}
+
+.name {
+    max-width: 128px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rank {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.33rem;
+    vertical-align: middle;
+}
+
+.rank img {
+    width: 35px;
+    height: 16px;
+}
+
+.position {
+    color: #909090;
+    font-size: 1rem;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
