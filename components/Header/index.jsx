@@ -49,9 +49,21 @@ export default function Header() {
         },
     ]
     let lastScrollTop = 0;
+    const pc_ul = useRef(null)
+    const def = useRef(null)
     const phone_ul = useRef(null)
     const clickHandle = e => {
         e.target.nextElementSibling.click()
+        phone_ul.current.children[Array.from(pc_ul.current.children).indexOf(e.target.parentNode)].children[0].checked = true
+        def.current.innerHTML = e.target.nextElementSibling.innerHTML
+    }
+    const phoneClickHandle = e => {
+        console.log(11111)
+        e.target.nextElementSibling.click()
+        def.current.innerHTML = e.target.nextElementSibling.innerHTML
+        phone_ul.current.classList.remove(styles.show)
+        pc_ul.current.children[Array.from(phone_ul.current.children).indexOf(e.target.parentNode)].children[0].checked = true
+
     }
     const show = () => {
         if (phone_ul.current.classList.length > 1)
@@ -88,30 +100,29 @@ export default function Header() {
                     <nav className={styles.main_nav} ref={nav}>
                         <ul className={styles.nav_list}>
                             <li className={styles.main_nav_list}>
-
-                                <div className={Menu_show ? styles.hidden : styles.phone_menu} onClick={show}>
-                                    <span>首页</span>
+                                <div className={Menu_show ? styles.hidden : styles.phone_nav_box}>
+                                    <div className={styles.phone_menu} onClick={show} >
+                                        <span ref={def}>首页</span>
+                                    </div>
+                                    <ul className={styles.phone_hide} ref={phone_ul}>
+                                        {
+                                            data.map((i, _) => (
+                                                <li className={styles.phone_nav_item} key={_}>
+                                                    <input type="radio" name='radio_phone' className={styles.nav_radio} onClick={phoneClickHandle} defaultChecked={!_ ? true : false} />
+                                                    <Link href={i.path}>{i.label}</Link>
+                                                    {i.tablead ? <Table tablead={i.tablead} /> : null}
+                                                </li>
+                                            ))
+                                        }
+                                    </ul>
                                 </div>
-                                <ul className={Menu_show ? styles.hidden : styles.phone_hide} ref={phone_ul}>
-                                    {
-                                        data.map((i, _) => (
-                                            <li className={styles.phone_nav_item}>
-                                                <input type="radio" name='radio_pc' className={styles.nav_radio} onClick={clickHandle} defaultChecked={!_ ? true : false} />
-                                                <Link href={i.path}>{i.label}</Link>
-                                                {i.tablead ? <Table tablead={i.tablead} /> : null}
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                                <ul className={Menu_show ? styles.phone_wuhu : styles.hidden}>
+                                <ul className={Menu_show ? styles.phone_wuhu : styles.hidden} ref={pc_ul}>
                                     {
                                         data.map((i, _) => (
                                             <li className={styles.nav_item} key={_}>
                                                 <input type="radio" name='radio_pc' className={styles.nav_radio} onClick={clickHandle} defaultChecked={!_ ? true : false} />
                                                 <Link href={i.path} className={styles.link}>
-                                                    <span className={styles.text}>
-                                                        {i.label}
-                                                    </span>
+                                                    {i.label}
                                                 </Link>
                                                 {i.tablead ? <Table tablead={i.tablead} /> : null}
                                             </li>
