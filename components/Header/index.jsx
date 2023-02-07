@@ -35,7 +35,7 @@ export default function Header() {
         {
             path: '/events',
             label: '活动',
-            tablead: '0111'
+            // tablead: '0111'
         },
         {
             path: '/challenge',
