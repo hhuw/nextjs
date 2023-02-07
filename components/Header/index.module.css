@@ -37,6 +37,8 @@
     align-items: center;
     height: 100%;
     position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -55,7 +57,7 @@
 
 .main_nav {
     height: 100%;
-    flex: 1 0 auto;
+    /* flex: 1 0 auto; */
     line-height: normal;
 }
 
@@ -70,9 +72,10 @@
 .main_nav_list {
     display: flex;
     order: 99;
+    position: relative;
 }
 
-.phone_hide {
+.phone_wuhu {
     display: flex;
 }
 
@@ -92,8 +95,6 @@
 .text {
     color: #515767;
 }
-
-
 
 .nav_item:hover {
     border-bottom: 1px solid blue;
@@ -120,10 +121,9 @@
     cursor: pointer;
 }
 
-
-.nav_item:has(.nav_radio:checked) .text {
+.nav_item:has(.nav_radio:checked) .text,
+.phone_nav_item:has(.nav_radio:checked) a {
     color: #1e80ff;
-
 }
 
 .menu_auto {
@@ -135,4 +135,48 @@
     justify-content: center;
     padding: 0;
     width: 5.66rem;
+}
+
+.phone_menu {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    color: #1e80ff;
+    font-size: 1.33rem;
+    justify-content: center;
+    padding: 0;
+    width: 5.66rem;
+    cursor: pointer;
+}
+
+.phone_hide {
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 8px 24px rgb(81 87 103 / 16%);
+    border: 1px solid #ebebeb;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+.phone_nav_item {
+    height: 4rem;
+    color: #86909c;
+    font-size: 1.167rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.show {
+    display: block;
+    position: absolute;
+    left: -3.3rem;
+    padding: 0.667rem;
+    width: 11.9rem;
+    top: 52px;
+}
+
+.hidden {
+    display: none;
 }
